@@ -1,0 +1,32 @@
+<div class="container">
+  <form class="ui form" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <h2 class="ui dividing header">Register User</h2>
+    <div class="field">
+      <label>* Name</label>
+      <div class="two fields">
+        <div class="field">
+          <input type="text" name="firstName" placeholder="first Name" required>
+        </div>
+        <div class="field">
+          <input type="text" name="lastName" placeholder="last Name" required>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>* Username/Password</label>
+      <div class="three fields">
+        <div class="field">
+          <input type="text" name="userName" placeholder="user Name" required>
+        </div>
+        <div class="field">
+          <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="field">
+          <input type="password" name="password" placeholder="Password Again" required>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="ui button">Register</button>
+  </form>
+</div>
