@@ -18,4 +18,8 @@ public class UserServiceImpl implements UserService {
         return userDao.save(user);
     }
 
+    public User findByUserName(String userName) {
+        return userDao.findByUserName(userName);
+    };
+
 }

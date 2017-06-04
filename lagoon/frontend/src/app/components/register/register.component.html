@@ -1,14 +1,14 @@
 <div class="container">
-  <form class="ui form" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+  <form *ngIf="!registerd" class="ui form" (ngSubmit)="onSubmit()" #registerForm="ngForm">
     <h2 class="ui dividing header">Register User</h2>
     <div class="field">
       <label>* Name</label>
       <div class="two fields">
         <div class="field">
-          <input type="text" name="firstName" placeholder="first Name" required>
+          <input type="text" name="firstName" placeholder="first Name" [(ngModel)]="newUser.firstName" required>
         </div>
         <div class="field">
-          <input type="text" name="lastName" placeholder="last Name" required>
+          <input type="text" name="lastName" placeholder="last Name" [(ngModel)]="newUser.lastName" required>
         </div>
       </div>
     </div>
@@ -16,10 +16,10 @@
       <label>* Username/Password</label>
       <div class="three fields">
         <div class="field">
-          <input type="text" name="userName" placeholder="user Name" required>
+          <input type="text" name="userName" placeholder="user Name" [(ngModel)]="newUser.userName" required>
         </div>
         <div class="field">
-          <input type="password" name="password" placeholder="Password" required>
+          <input type="password" name="password" placeholder="Password"  [(ngModel)]="newUser.password" required>
         </div>
         <div class="field">
           <input type="password" name="password" placeholder="Password Again" required>
@@ -29,4 +29,7 @@
 
     <button type="submit" class="ui button">Register</button>
   </form>
+  <div *ngIf="registerd">
+    <h1>Register Success!</h1>
+  </div>
 </div>

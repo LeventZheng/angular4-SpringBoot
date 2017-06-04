@@ -11,11 +11,11 @@
     </a>
   </div>
   <div class="right menu">
-    <a class="item" routerLink="register">
+    <a *ngIf="!loginService.checkLogin()" class="item" routerLink="register">
       Register
     </a>
-    <a class="item">
-      Login
+    <a class="item" routerLink="login" (click)="onClick()">
+      {{loginService.checkLogin()? 'Logout' : 'Login'}}
     </a>
   </div>
 </div>
