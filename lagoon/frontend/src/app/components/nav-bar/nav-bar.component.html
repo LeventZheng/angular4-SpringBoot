@@ -9,6 +9,9 @@
     <a class="item" routerLink="home">
       Home
     </a>
+    <a *ngIf="loginService.checkLogin()" class="item" routerLink="my-album">
+      My Album
+    </a>
   </div>
   <div class="right menu">
     <a *ngIf="!loginService.checkLogin()" class="item" routerLink="register">

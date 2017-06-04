@@ -12,6 +12,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyAlbumComponent } from './components/my-album/my-album.component';
+import { AddPhotoComponent } from './components/add-photo/add-photo.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MyAlbumComponent } from './components/my-album/my-album.component';
     NavBarComponent,
     RegisterComponent,
     LoginComponent,
-    MyAlbumComponent
+    MyAlbumComponent,
+    AddPhotoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { MyAlbumComponent } from './components/my-album/my-album.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: 'home', component: HomeComponent},
       { path: 'register', component: RegisterComponent},
-      { path: 'login', component: LoginComponent}
+      { path: 'login', component: LoginComponent},
+      { path: 'my-album', component: MyAlbumComponent},
     ]
   }
 ];

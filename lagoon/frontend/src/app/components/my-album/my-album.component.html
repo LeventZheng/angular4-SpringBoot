@@ -1,3 +1,24 @@
-<p>
-  my-album works!
-</p>
+<div class="container">
+  <div class="photo-list">
+    <div class="ui grid">
+      <div class="ui horizontal segments">
+        <span *ngFor="let photo of photos">
+          <div class="ui segment">
+            <img src="http://localhost:8080/images/{{photo.imageName}}" class="ui medium image"
+             (click)="onSelect(photo)" style="cursor: pointer">
+             <div class="ui grid">
+               <div class="twelve wide column left aligned">
+                 <strong>{{photo.title}}</strong><br>
+               </div>
+               <div class="four wide column right aligned">
+                 {{photo.likes}}likes
+               </div>
+             </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a routerLink="AddPhoto" class="ui button">Add Photo</a>
