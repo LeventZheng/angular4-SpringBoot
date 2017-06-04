@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpService } from './../http.service';
+import { User } from './../models/user';
+
 @Component({
   selector: 'register',
   templateUrl: './register.component.html',
@@ -7,11 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  newUser: User = new User();
+  registerd = false;
+
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
   }
 
-  onSubmit() {}
+  onSubmit() {
+    this.httpService.sendUser(this.newUser).subscribe((data) => {
+      this.registerd = true;
+      this.newUser = new User();
+    }, (error) => {console.log(error);
+    });
+  }
 
 }
