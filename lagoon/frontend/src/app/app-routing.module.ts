@@ -1,3 +1,4 @@
+import { AddPhotoComponent } from './components/add-photo/add-photo.component';
 import { MyAlbumComponent } from './components/my-album/my-album.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent},
       { path: 'login', component: LoginComponent},
       { path: 'my-album', component: MyAlbumComponent},
+      { path: 'add-photo', component: AddPhotoComponent},
     ]
   }
 ];

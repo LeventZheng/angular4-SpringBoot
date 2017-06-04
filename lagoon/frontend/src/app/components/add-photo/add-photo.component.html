@@ -1,3 +1,35 @@
-<p>
-  add-photo works!
-</p>
+<div class="container">
+  <form *ngIf="!photoAdded" class="ui form" (ngSubmit)="onSubmit()" #addPhotoForm="ngForm">
+    <h2 class="ui dividing header">Add Your Photo</h2>
+    <div class="field">
+      <div class="two fields">
+        <div class="field">
+          <label>* Photo Name</label>
+          <input type="text" name="firstName" placeholder="first Name" [(ngModel)]="newPhoto.photoName" required>
+        </div>
+        <div class="field">
+          <label>* Photo Title</label>
+          <input type="text" name="lastName" placeholder="last Name" [(ngModel)]="newPhoto.title" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Description</label>
+      <input type="text" name="Description" placeholder="Description" [(ngModel)]="newPhoto.description">
+    </div>
+
+    <div class="field">
+      <label>Upload Photo</label>
+      <input type="file" (change)="uploadPhotoService.fileChangeEvent($event)">
+      <button type="button" (click)="uploadPhotoService.upload()" class="ui mini button">Upload</button>
+    </div>
+    
+    <hr>
+    <br>
+    <button type="submit" class="ui button">Register</button>
+  </form>
+  <div *ngIf="photoAdded">
+    <h1>Add Photo Success!</h1>
+  </div>
+</div>
