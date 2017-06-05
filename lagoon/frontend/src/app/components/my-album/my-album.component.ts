@@ -28,11 +28,11 @@ export class MyAlbumComponent implements OnInit {
     this.userService.getUserByName(localStorage.getItem('currentUserName')).subscribe(
       (user) => {
         _self.user = JSON.parse(JSON.stringify(user))._body;
-        _self.photoService.getPhotoByUser(_self.user).subscribe(
+        /*_self.photoService.getPhotoByUser(_self.user).subscribe(
           (photos) => {
             _self.photos = JSON.parse(JSON.parse(JSON.stringify(user))._body).photoList();
           }
-        );
+        );*/
       }, (error) => { console.log(error);
       }
     );

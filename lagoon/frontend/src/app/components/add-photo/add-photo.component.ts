@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'add-photo',
   templateUrl: './add-photo.component.html',
-  styleUrls: ['./add-photo.component.css']
+  styleUrls: ['./add-photo.component.css'],
+  providers: [UploadPhotoService, AddPhotoService, UserService]
 })
 export class AddPhotoComponent implements OnInit {
 
