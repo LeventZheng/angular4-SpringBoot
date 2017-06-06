@@ -27,12 +27,12 @@ export class MyAlbumComponent implements OnInit {
     const _self = this;
     this.userService.getUserByName(localStorage.getItem('currentUserName')).subscribe(
       (user) => {
-        _self.user = JSON.parse(JSON.stringify(user))._body;
-        /*_self.photoService.getPhotoByUser(_self.user).subscribe(
+        _self.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
+        _self.photoService.getPhotoByUser(_self.user).subscribe(
           (photos) => {
-            _self.photos = JSON.parse(JSON.parse(JSON.stringify(user))._body).photoList();
+            _self.photos = JSON.parse(JSON.parse(JSON.stringify(user))._body).photoList;
           }
-        );*/
+        );
       }, (error) => { console.log(error);
       }
     );
@@ -40,6 +40,7 @@ export class MyAlbumComponent implements OnInit {
 
   onSelect(photo: Photo) {
     this.selectedPhoto = photo;
+    this.router.navigate(['/image-detail', this.selectedPhoto.photoId]);
   }
 
 }

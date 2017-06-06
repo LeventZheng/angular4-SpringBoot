@@ -1,6 +1,7 @@
 package com.lavain.backend.controller;
 
 import com.lavain.backend.model.Photo;
+import com.lavain.backend.model.User;
 import com.lavain.backend.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,13 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by User on 2017/6/5.
  */
 @RestController
 @RequestMapping("/rest")
-public class PhotoResources {
+public class PhotoResource {
 
     private String imageName;
 
@@ -49,5 +51,26 @@ public class PhotoResources {
     public Photo addPhoto(@RequestBody Photo photo) {
         photo.setImageName(imageName);
         return photoService.save(photo);
+    }
+
+    @RequestMapping(value = "/photo/user", method = RequestMethod.POST)
+    public List getPhotoByUser(@RequestBody User user) {
+
+        return photoService.findByUser(user);
+    }
+
+    @RequestMapping(value = "/photo/photoId", method = RequestMethod.POST)
+    public Photo getPhotoByPhotoId(@RequestBody Long photoId) {
+        return photoService.findByPhotoId(photoId);
+    }
+
+    @RequestMapping(value = "/photo/update", method = RequestMethod.POST)
+    public void updatePhoto(@RequestBody Photo photo) {
+        Photo currentPhoto = photoService.findByPhotoId(photo.getPhotoId());
+        currentPhoto.setLikes(photo.getLikes());
+        // 这里不直接使用photo传参对象而拿id去获取，是因为photo model中
+        // User使用了注解@JsonBackReference或者@JsonIgnore
+        // 以JSON的格式保存可能会丢失
+        photoService.save(currentPhoto);
     }
 }

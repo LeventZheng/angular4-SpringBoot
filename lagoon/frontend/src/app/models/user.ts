@@ -7,5 +7,5 @@ export class User {
     public password: string;
     public created: Date;
     public photoList: Photo[];
-    public linkedPhotoList: Photo[];
+    public likedPhotoList: Photo[];
 }

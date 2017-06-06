@@ -1,8 +1,8 @@
 import { Photo } from './photo';
 export class Comment {
-    public commentId: number;
-    public photo: Photo;
+    commentId: number;
+    photo: Photo;
     userName: string;
-    conetent: string;
+    content: string;
     photoId: number;
 }

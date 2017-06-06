@@ -1,0 +1,41 @@
+<div class="ui text container">
+  <h3>{{user.userName}}</h3>
+  <h4>{{photo.title}}</h4>
+  <p>{{photo.description}}</p>
+  <div class="ui comments">
+    <h3 class="ui dividing header">Comments</h3>
+    <div class="comment" *ngFor="let comment of photo.commentList">
+      <div class="ui grid">
+        <div class="two wide column">
+          <img src="./../../../assets/image/avatar1.png" class="ui image tiny">
+          <span class="author">{{comment.userName}}</span>
+        </div>
+        <div class="fourteen wide column">
+          <div class="ui blue message">
+            <div class="content">
+              <div class="text">
+                {{comment.content}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="ui grid">
+      <div class="two wide column">
+        <img src="./../../../assets/image/avatar1.png" class="ui image tiny">
+        <span class="author">{{user.userName}}</span>
+      </div>
+      <div class="fourteen wide column">
+        <form class="ui form" (ngSubmit)="onSubmit()" #commentForm="ngForm">
+          <div class="field">
+            <textarea #words row="3" placeholder="Add a comment" required 
+              [(ngModel)]="newComment.content" name="content"></textarea>
+          </div>
+          <button type="submit" class="ui blue button">Comment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
