@@ -1,7 +1,7 @@
 package com.lavain.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -27,6 +27,7 @@ public class User {
 
     // 一对多的映射关系,一个用户可以有多个相册，一个相册只属于一个用户
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<Photo> photoList;
 
     //多对多的关系，用户可以喜欢多个相册，相册也可以被多个用户喜欢

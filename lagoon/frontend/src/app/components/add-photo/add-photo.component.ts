@@ -28,7 +28,7 @@ export class AddPhotoComponent implements OnInit {
     const _self = this;
     this.userService.getUserByName(localStorage.getItem('currentUserName')).subscribe(
       (user) => {
-        _self.user = JSON.parse(JSON.stringify(user))._body;
+        _self.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
         _self.newPhoto.user = _self.user;
         _self.addPhotoService.sendPhoto(_self.newPhoto).subscribe(
           (data) => {

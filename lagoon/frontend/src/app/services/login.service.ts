@@ -20,7 +20,7 @@ export class LoginService {
     }
 
     checkLogin() {
-        if (localStorage.getItem('currentUserName') !== '' && localStorage.getItem('token') !== '') {
+        if (localStorage.getItem('currentUserName') && localStorage.getItem('token')) {
         return true;
         } else {
         return false;
