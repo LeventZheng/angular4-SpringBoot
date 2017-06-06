@@ -1,12 +1,4 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/lagoon
-    username: root
-    password: mysql
-    dbcp2:
-      test-while-idle: true
-      validation-query: SELECT 1
   jpa:
     show-sql: true
     hibernate:
@@ -16,3 +8,5 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+  profiles:
+    active: spark
