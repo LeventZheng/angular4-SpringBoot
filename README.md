@@ -1,7 +1,9 @@
 # angular4+SpringBoot
-内含其他子项目，项目全部使用angular4+SpringBoot的技术栈
+内含其他子项目: girl、lagoon
+项目全部使用angular4+SpringBoot技术栈
 
 1.girl
+SpringBoot入门教学
 学习参照慕课网上教学视频：2小时学会SpringBoot
 
 2.lagoon
