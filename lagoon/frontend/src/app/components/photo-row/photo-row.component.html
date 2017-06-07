@@ -1,0 +1,17 @@
+<div style="margin-top: 20px;">
+  <div *ngFor="let photo of photoListSorted">
+    <div class="ui grid">
+      <div class="ten wide column">
+        <img src="http://localhost:8080/images/{{photo.imageName}}" class="ui image small centered">
+      </div>
+      <div class="six wide column">
+        <br>
+        <p class="ui centered">{{photo.likes}} likes</p>
+        <p class="ui">{{photo.title}}</p>
+      </div>
+    </div>
+    <div class="ui divider">
+
+    </div>
+  </div>
+</div>

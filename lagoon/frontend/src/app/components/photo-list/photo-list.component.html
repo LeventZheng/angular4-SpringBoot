@@ -1,20 +1,23 @@
 <div class="photo-list">
-  <div class="ui grid">
-    <div class="two wide column"></div>
+  <div *ngFor="let photo of photos">
+    <div class="ui grid">
+      <div class="two wide column"></div>
 
-    <div class="fourteen wide column">
-      <div class="ui raised segment">
-        <img src="./../../assets/image/timg.jpg" class="ui image big centered" style="cursor: pointer" />
-        <div class="ui center aligned grid">
-          <div class="column twelve wide">
-            <div class="ui grid">
-              <div class="four column row">
-                <div class="left floated column left aligned">
-                  <strong>Photo Title</strong><br>
-                  Photo Description
-                </div>
-                <div class="right floated column right aligned">
-                  31 &nbsp; Likes
+      <div class="fourteen wide column">
+        <div class="ui raised segment">
+          <img src="http://localhost:8080/images/{{photo.imageName}}" class="ui image big centered" style="cursor: pointer" 
+            (click)="onSelect(photo)" />
+          <div class="ui center aligned grid">
+            <div class="column twelve wide">
+              <div class="ui grid">
+                <div class="four column row">
+                  <div class="left floated column left aligned">
+                    <strong>{{photo.title}}</strong><br>
+                    {{photo.description}}
+                  </div>
+                  <div class="right floated column right aligned">
+                    {{photo.likes}} &nbsp; Likes
+                  </div>
                 </div>
               </div>
             </div>

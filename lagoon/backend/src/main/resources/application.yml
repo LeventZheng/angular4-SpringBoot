@@ -9,4 +9,4 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
   profiles:
-    active: home
+    active: spark

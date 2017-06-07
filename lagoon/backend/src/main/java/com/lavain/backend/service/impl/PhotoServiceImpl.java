@@ -28,4 +28,8 @@ public class PhotoServiceImpl implements PhotoService{
     public Photo findByPhotoId(Long photoId) {
         return photoDao.findByPhotoId(photoId);
     };
+
+    public  List<Photo> findAll() {
+        return photoDao.findAll();
+    };
 }
