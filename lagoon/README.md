@@ -1,10 +1,3 @@
-# angular4+SpringBoot
-内含其他子项目，项目全部使用angular4+SpringBoot的技术栈
-
-1.girl
-学习参照慕课网上教学视频：2小时学会SpringBoot
-
-2.lagoon
 改版lagoon项目，使用angular-cli搭建前端，angular版本4+，springBoot1.5.3
 作者是老外，讲解过程也全部是英文，所以需要一些英文功底，用的技术栈是angular2-beta+mysql+spring-boot1.3.3release
 在我使用的时候，已经换成了angular4+SpringBoot1.5.5release,加了ng-cli脚手架工具，加快开发速度
