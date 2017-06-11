@@ -13,11 +13,15 @@ import java.util.List;
 public class GirlController {
 
     @Autowired GirlRepository girlRepository;
+
+    @Autowired GirlService girlService;
+
     @GetMapping( value = "/girls")
     public List<Girl> girlList() {
         return girlRepository.findAll();
     }
 
+    //dev环境中的访问路径为http://localhost:8080/spring/girl/add
     @PutMapping(value = "/add")
     public Girl add(@RequestParam(value = "cupSize") String cupSize,
                      @RequestParam( value = "age") Integer age) {
@@ -27,6 +31,7 @@ public class GirlController {
         return girlRepository.save(girl);
     }
 
+    //删除
     @DeleteMapping(value = "/delete")
     public String delete(@RequestParam(value = "id") Integer id) {
         girlRepository.delete(id);
@@ -41,5 +46,11 @@ public class GirlController {
     @GetMapping(value = "/findByAge")
     public List<Girl> findByAge (@RequestParam(value = "age") Integer age) {
         return girlRepository.findByAge(age);
+    }
+
+    // 加事务管理
+    @PostMapping(value = "/girl/two")
+    public void girlTwo() {
+        girlService.insertTwo();
     }
 }
